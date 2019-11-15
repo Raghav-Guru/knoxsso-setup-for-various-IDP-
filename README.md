@@ -4,7 +4,7 @@
 
 --> Get the IDP SSO metadata using keycloak url : 
 
-#curl -ik https://<keycloakFQDN>:8443/auth/realms/<RealName>/protocol/saml/descriptor -o idp.xml
+#curl -ik https://keycloak-FQDN:8443/auth/realms/KeycloakRealmName/protocol/saml/descriptor -o idp.xml
 
 --> Copy idp.xml file to the knox host. 
 
