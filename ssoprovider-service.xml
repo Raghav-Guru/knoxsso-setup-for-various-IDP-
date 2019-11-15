@@ -1,0 +1,56 @@
+<topology>
+    <gateway>
+                <provider>
+                    <role>webappsec</role>
+                    <name>WebAppSec</name>
+                    <enabled>true</enabled>
+                    <param>
+                       <name>cors.enabled</name>
+                       <value>true</value></param>
+                </provider>
+        <provider>
+            <role>federation</role>
+            <name>SSOCookieProvider</name>
+            <enabled>true</enabled>
+            <param>
+              <name>sso.authentication.provider.url</name>
+              <value>https://c416-node4.squadron.support.hortonworks.com:8443/gateway/oid/api/v1/websso</value>
+            </param>
+        </provider>
+
+    </gateway>
+
+<service>
+   <role>KNOXTOKEN</role>
+   <param>
+      <name>knox.token.ttl</name>
+      <value>36000000</value>
+   </param>
+</service>
+    <service>
+        <role>YARNUIV2</role>
+        <url>http://hdp-edlaccess-prod0.prod.edlprivate.basf.com:8088</url>
+    </service>
+    <service>
+        <role>AMBARI</role>
+        <url>http://c416-node1.squadron.support.hortonworks.com:8080</url>
+    </service>
+    <service>
+        <role>AMBARIUI</role>
+        <url>http://c416-node1.squadron.support.hortonworks.com:8080</url>
+    </service>
+    <service>
+        <role>AMBARIWS</role>
+        <url>http://c416-node1.squadron.support.hortonworks.com:8080</url>
+    </service>
+    <service>
+        <role>RANGERUI</role>
+        <url>http://c416-node2.squadron.support.hortonworks.com:6080</url>
+    </service>
+            <service>
+                <role>WEBHDFS</role>
+                <url>http://c416-node2.squadron.support.hortonworks.com:50070/webhdfs</url>
+
+            </service>
+
+</topology>
