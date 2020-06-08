@@ -29,7 +29,7 @@
 
 **Azure AD - SAML:** 
 
-- In Azure AD create a custom SAML application, Only mention the entityID(user defined Name) and ACS endpoint which should be the knox SSO url like https://<knoxHost>:8443/gateway/knoxsso/api/v1/websso.
+- In Azure AD create a custom SAML application, Only mention the entityID(user defined Name) and ACS endpoint which should be the knox SSO url like `https://<knoxHost>:8443/gateway/knoxsso/api/v1/websso`.
 
 **Note** :  As we need IDP Initiated SSO, make sure not to specify the Sign on URL. 
 
