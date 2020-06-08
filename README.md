@@ -16,3 +16,34 @@
                   </param>
  
  --> Setup any service for SSO authentication and verify the SSO redirection and authentication 
+
+
+**Azure AD - SAML:** 
+
+- In Azure AD create a custom SAML application, Only mention the entityID(user defined Name) and ACS endpoint which should be the knox SSO url like https://<knoxHost>:8443/gateway/knoxsso/api/v1/websso.
+
+**Note** :  As we need IDP Initiated SSO, make sure not to specify the Sign on URL. 
+
+(Screenshot ms-azure-saml.png has example SAML config created on Azure AD.)
+
+- On Knox Host, create metadata file in the format 
+
+```xml
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.IdP.com/entity_ID">
+   <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+      <md:KeyDescriptor use="signing">
+         <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+              <ds:X509Data><ds:X509Certificate>x509-certificate</ds:X509Certificate></ds:X509Data>
+         </ds:KeyInfo>
+      </md:KeyDescriptor>
+      <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+           Location="https://login.microsoftonline.com/..."/>
+      <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+           Location="https://login.microsoftonline.com/..."/>
+   </md:IDPSSODescriptor>
+</md:EntityDescriptor>
+```
+
+
+
