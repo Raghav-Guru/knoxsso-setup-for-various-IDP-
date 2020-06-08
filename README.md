@@ -2,7 +2,7 @@
 
 - Create SAML client in keycloak.
 
-  Example :  [keycloak-saml-client.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/keycloak-saml-client.png)
+  Sample config :  [keycloak-saml-client.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/keycloak-saml-client.png)
 
 - Create user account under the realm and set password. 
 
@@ -23,7 +23,7 @@
 
 - Setup any service for SSO authentication and verify the SSO redirection and authentication.
 
-- Example config [knoxsso.xml_saml_keycloak](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/knoxsso.xml_saml_keycloak)
+- Sample config [knoxsso.xml_saml_keycloak](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/knoxsso.xml_saml_keycloak)
 
   (Changes required for properties pac4j.callbackUrl, saml.identityProviderMetadataPath,saml.serviceProviderMetadataPath and saml.serviceProviderEntityId)
 
@@ -33,7 +33,7 @@
 
 **Note** :  As we need IDP Initiated SSO, make sure not to specify the Sign on URL. 
 
-Exampe: [ms-azure-saml.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/ms-azure-saml.png)
+Sample Config : [ms-azure-saml.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/ms-azure-saml.png)
 
 - On Knox Host, create metadata file in the format 
 
@@ -54,7 +54,7 @@ Exampe: [ms-azure-saml.png](https://github.com/Raghav-Guru/knoxsso-setup-for-var
 </md:EntityDescriptor>
 ```
 
-- Refer example config [knoxsso-msazure.xml](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/knoxsso-msazure.xml)
+- Refer sample knoxsso config with Azure AD [knoxsso-msazure.xml](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/knoxsso-msazure.xml)
 
   (Changes required for saml.identityProviderMetadataPath saml.serviceProviderMetadataPath , saml.serviceProviderEntityId and knoxsso.redirect.whitelist.regex)
 
