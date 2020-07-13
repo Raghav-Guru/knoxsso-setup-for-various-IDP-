@@ -33,7 +33,7 @@
 
 **Note** :  As we need IDP Initiated SSO, make sure not to specify the Sign on URL. 
 
-Sample Config : [ms-azure-saml.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/ms-azure-saml.png)
+Sample Config : [ms-azure-saml-setup.png](https://github.com/Raghav-Guru/knoxsso-setup-for-various-IDP-/blob/master/ms-azure-saml-setup.png)
 
 - On Knox Host, create metadata file in the format 
 
